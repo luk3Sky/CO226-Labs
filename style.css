@@ -1,0 +1,15 @@
+main h1.main-title{
+    background-color: rgb(52, 75, 204);
+    margin-top:80px;
+    position: relative;
+    margin-bottom: 10px;
+    padding: 2px;
+}
+article p {
+    text-align: center;
+}
+
+aside div.aside-content{
+    text-align: left;
+
+}
