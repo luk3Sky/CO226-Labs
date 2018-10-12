@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> -->
     <title>Document</title>
 </head>
 <body>
@@ -14,44 +14,57 @@
     <article>
         <div>
             <h3>Fill out the form below and click "Order Now" to order</h3>
+            <br>
         </div>
         <div class="form-section">
             <section>
                 <form name="input-form" action="">
-                    <p style="margin-right: 2px; float: left;">Search by order number:</p> <input type="text" name="order-number"/>
-                    <input type="submit" value="submit"/>
-                    <br> <br>
-                    <div>
-                        Choose your size: <input type="radio" name="size-selection" id=""/>Small
-                        <input type="radio" name="size-selection" id=""/>Medium
-                        <input type="radio" name="size-selection" id=""/>Large<br>
+                    <div style="float: left; margin-right: 2rem; margin-left: 0.4rem; margin-bottom: 0.2rem;">
+                        <p>Search by order number:</p> 
+                        <p>Choose your size: </p>
+                        <p>Choose your colour: </p>
+                        <p>Extra Items: </p>
+                        <p>Deliver To: </p>
+                        <p>Your Comments: </p>
                     </div>
                     <div>
-                        Choose your colour: <select name="color-selection" id="">
-                            <option value="red">Red</option>
-                            <option value="purple">Purple</option>
-                            <option value="blue">Blue</option>
-                            <option value="green">Green</option>
-                        </select>
-                    </div><br>
-                    <div>
-                        <div class="form-check">
-                            <p style="float:left; margin-right:40px;">Extra Items: </p>
-                            <input type="checkbox" name="cap" value="Car"> Car<br>
-                            <input type="checkbox" name="wrist band" value="Wrist Band"> Wrist Band 
+                        <div>
+                            <br>
+                            <input type="text" name="order-number"/>
+                            <input type="submit" value="submit"/>
+                            <br><br>
+                        </div>
+                        <div>
+                            <input type="radio" name="size-selection" id=""/>Small
+                            <input type="radio" name="size-selection" id=""/>Medium
+                            <input type="radio" name="size-selection" id=""/>Large<br>
+                        </div>
+                        <div>
+                            <br>
+                            <select name="color-selection" id="">
+                                <option value="red">Red</option>
+                                <option value="purple">Purple</option>
+                                <option value="blue">Blue</option>
+                                <option value="green">Green</option>
+                            </select>
+                        </div>
+                        <div>
+                            <div class="form-check">
+                                <p><input type="checkbox" name="cap" value="Car">Car</p>
+                                <p><input type="checkbox" name="wrist band" value="Wrist Band">Wrist Band</p>
+                            </div>
+                        </div>
+                            <p>First name: <input type="text" name="first-name" id=""/></p>
+                        </div>
+                            <p>Last name:   <input type="text" name="last-name" id=""/></p>
+                        </div>
+                        <div>
+                            <p>Address 1: <input style="position: relative;" type="text" name="last-name" id=""/></p>
+                            <p>Address 2: <input type="text" name="last-name" id=""/></p>
+                            <p>Address 3: <input type="text" name="last-name" id=""/></p>
                         </div>
                     </div>
-                    <div style="position: relative;left:50px;">
-                        <p>First name: <input type="text" name="first-name" id=""/> </p>
-                    </div>
-                    <div style="position: relative;left:50px;">
-                        <p>Last name:   <input type="text" name="last-name" id=""/> </p><br>
-                    </div>
-                    <div>
-                        Deliver To:Last name:   
-                                <input style="position: relative;left:100px;" type="text" name="last-name" id=""/><br>
-                            
-                    </div>
+                    
                 </form>
             </section>
             <section>
