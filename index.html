@@ -7,36 +7,103 @@
     <title>Title</title>
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        .col-1{
+            float: left;
+            margin-right: 10%;
+        }
+        .col-center{
+            text-align: center;
+        }
+        td{
+            margin-left: 10%;
+        }
+        .round1 {
+            border: 2px solid red;
+            border-radius: 5px;
+            width: fit-content;
+        }
+    </style>
 </head>
 <body>
     <head>
         <h1 style="margin-top: 20px;">Buy T-shirts Online</h1>
     </head>
 
-    <article>
+    <article class="round1">
         <section>
             <h3>Fill out the form below and click "Order Now" to order</h3>
         </section>
         <section>
             <form action="">
-                <div class="row">
-                    <div class="col">
-                        Search by :
-                    </div>
-                    <div class="col">
-                        <input type="text" name="order-number"/><button type="submit" value="Search" class="btn btn-primary">Search</button>
-                    </div>
-                </div>
-                <div>
-                    <div class="col">
-                        Size : 
-                    </div>
-                </div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-
+                <table>
+                    <tr>
+                        <td>
+                            Search by order number:
+                        </td>
+                        <td>
+                            <input type="text" name="order-number"/>
+                            <!-- <input type="submit" value="Search"/> -->
+                            <button type="submit" value="Search" class="btn btn-primary">Search</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Choose your size:
+                        </td>
+                        <td>
+                            <input type="radio" name="size-selection" id=""/>Small
+                            <input type="radio" name="size-selection" style="margin-left: 1rem" id=""/>Medium
+                            <input type="radio" name="size-selection" style="margin-left: 1rem" id=""/>Large
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Choose your colour:
+                        </td>
+                        <td>
+                            <select name="color-selection" id="">
+                                <option value="red">Red</option>
+                                <option value="purple">Purple</option>
+                                <option value="blue">Blue</option>
+                                <option value="green">Green</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Extra Items:
+                        </td>
+                        <td>
+                            <input type="checkbox" name="cap" value="Cap">Cap <br>
+                            <input type="checkbox" name="wrist band" value="Wrist Band">Wrist Band
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Deliver To:
+                        </td>
+                        <td>
+                            <p>First name: <input type="text" name="first-name" id=""/></p>
+                            <p>Last name:  <input type="text" name="last-name" id=""/></p>
+                            <p>Address 1:  <input style="position: relative;" type="text" name="last-name" id=""/></p>
+                            <p>Address 2:  <input type="text" name="last-name" id=""/></p>
+                            <p>Address 3:  <input type="text" name="last-name" id=""/></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Your Comments:
+                        </td>
+                        <td>
+                            <textarea rows="12" cols="50" name="comment" form="usrform"></textarea><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type="submit" value="Order Now" class="btn btn-primary">Order Now</button></td>
+                    </tr>
+                </table>
             </form>
         </section>
     </article>

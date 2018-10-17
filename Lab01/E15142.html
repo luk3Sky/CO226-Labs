@@ -3,106 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> -->
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <h1 style="margin-top: 20px;">Buy T-shirts Online</h1>
-    </header>
-    <article>
-        <div>
-            <h3>Fill out the form below and click "Order Now" to order</h3>
-            <br>
-        </div>
-        <div class="form-section">
-            <section>
-                <form name="input-form" action="">
-                    <div style="float: left; margin-right: 2rem; margin-left: 0.4rem; margin-bottom: 50rem;">
-                        Search by order number: <br> <br>
-                        Choose your size: <br><br>
-                        Choose your colour: <br><br>
-                        Extra Items: <br><br><div style="margin-bottom: 8rem margin-live"></div>
-                        Deliver To: <br><br><div style="margin-bottom: 13rem"></div>
-                        Your Comments: <br>
-                    </div>
-                    <div>
+    <title>Title</title>
 
+    <style>
+        .col-1{
+            float: left;
+            margin-right: 10%;
+        }
+        .col-center{
+            text-align: center;
+        }
+        td{
+            margin-left: 10%;
+        }
+        .round1 {
+            border: 2px solid red;
+            border-radius: 5px;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body style="margin:15px">
+    <head>
+        <h1>Buy T-shirts Online</h1>
+    </head>
+
+    <article class="round1">
+        <section style="margin:15px">
+            <h3>Fill out the form below and click "Order Now" to order</h3>
+        </section>
+        <section>
+            <form action="" style="margin: 20px;">
+                <table>
+                    <tr>
+                        <td>
+                            Search by order number:
+                        </td>
+                        <td>
                             <input type="text" name="order-number"/>
                             <!-- <input type="submit" value="Search"/> -->
                             <button type="submit" value="Search" class="btn btn-primary">Search</button>
-
-                            <br><br>
-
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Choose your size:
+                        </td>
+                        <td>
                             <input type="radio" name="size-selection" id=""/>Small
                             <input type="radio" name="size-selection" style="margin-left: 1rem" id=""/>Medium
                             <input type="radio" name="size-selection" style="margin-left: 1rem" id=""/>Large
-                            <br>
-                            <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Choose your colour:
+                        </td>
+                        <td>
                             <select name="color-selection" id="">
                                 <option value="red">Red</option>
                                 <option value="purple">Purple</option>
                                 <option value="blue">Blue</option>
                                 <option value="green">Green</option>
                             </select>
-                            <br><br>
-                            <div class="form-check">
-                                <input type="checkbox" name="cap" value="Car">Car <br>
-                                <input type="checkbox" name="wrist band" value="Wrist Band">Wrist Band <br> <br>
-                            </div>
-                            First name: <input type="text" name="first-name" id=""/><br><br>
-
-                            Last name:   <input type="text" name="last-name" id=""/><br><br>
-
-                            Address 1: <input style="position: relative;" type="text" name="last-name" id=""/><br><br>
-                            Address 2: <input type="text" name="last-name" id=""/><br><br>
-                            Address 3: <input type="text" name="last-name" id=""/><br><br>
-                            <textarea rows="8" cols="50" name="comment" form="usrform"></textarea><br>
-                            <!-- <input type="submit" value="Order Now"/> -->
-                            <button type="submit" value="Order Now" class="btn btn-primary">Order now</button>
-                    </div>
-                    
-                </form>
-            </section>
-            
-            <section>
-                <form action="">
-                    <div class="col">
-                        <div class="row">
-                            <div class="col">
-                                Search by order number:
-                            </div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-
-                            </div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-
-                            </div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-
-                            </div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-
-                            </div>
-                            <div class="col"></div>
-                        </div>
-                    </div>
-                </form>
-            </section>
-        </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Extra Items:
+                        </td>
+                        <td>
+                            <input type="checkbox" name="cap" value="Cap">Cap <br>
+                            <input type="checkbox" name="wrist band" value="Wrist Band">Wrist Band
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Deliver To:
+                        </td>
+                        <td>
+                            <p>First name: <input type="text" name="first-name" id=""/></p>
+                            <p>Last name:  <input type="text" name="last-name" id=""/></p>
+                            <p>Address 1:  <input style="position: relative;" type="text" name="last-name" id=""/></p>
+                            <p>Address 2:  <input type="text" name="last-name" id=""/></p>
+                            <p>Address 3:  <input type="text" name="last-name" id=""/></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Your Comments:
+                        </td>
+                        <td>
+                            <textarea rows="12" cols="50" name="comment" form="usrform"></textarea><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type="submit" value="Order Now" class="btn btn-primary">Order Now</button></td>
+                    </tr>
+                </table>
+            </form>
+        </section>
     </article>
 </body>
 </html>
