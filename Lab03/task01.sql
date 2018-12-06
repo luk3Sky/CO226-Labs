@@ -1,7 +1,3 @@
--- load data local infile 'E:\CE Stuff\4th Sem\CO226 - Database Systems\CO226 Labs\Lab04\Movie_details.txt' into table MOVIE 
--- fields terminated by ','
--- lines terminated by '\n';
-
 CREATE DATABASE E15142Lab04;
 USE E15142Lab04;
 CREATE TABLE MOVIE (
@@ -17,6 +13,7 @@ ALTER TABLE MOVIE AUTO_INCREMENT = 101;
 INSERT INTO MOVIE(title, year, director) VALUES("Gone with the Wind", 1939, "Victor Fleming");
 INSERT INTO MOVIE(title, year, director) VALUES("Star Wars", 1977, "George Lucas");
 INSERT INTO MOVIE(title, year, director) VALUES("The Sound of Music", 1965, "Robert Wise");
+
 
 CREATE TABLE REVIEWER(
     reviewer_id INTEGER NOT NULL AUTO_INCREMENT,
