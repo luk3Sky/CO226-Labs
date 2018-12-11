@@ -1,3 +1,8 @@
-101,"Gone with the Wind",1939,"Victor Fleming"
-102,"Star Wars",1977,"George Lucas"
-103,"The Sound of Music",1965,"Robert Wise"
+"Gone with the Wind",1939,"Victor Fleming"
+"Star Wars",1977,"George Lucas"
+"The Sound of Music",1965,"Robert Wise"
+"E.T.", 1982, "Steven Speilberg"
+"Titanic", 1997, "James Cameron"
+"Snow White", 1937
+"Avatar", 2009, "James Cameron"
+"Raiders of the Lost Ark", 1981, "Steven Speilberg"
