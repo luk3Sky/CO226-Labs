@@ -163,25 +163,56 @@ WHERE
         AND rating_date IS NULL
 ORDER BY MOVIE.movie_id;
 
--- 18
+-- 18 needs to verify
 SELECT 
-    director
+    MOVIE.director
 FROM
     MOVIE
-        INNER JOIN
-    REVIEWER
 WHERE
-    MOVIE.movie_id = RATING.movie_id
-        AND RATING.reviewer_id = REVIEWER.reviewer_id
-        AND director IS NOT NULL
+director IS NOT NULL
 UNION
 SELECT 
-    reviewer_name
+    REVIEWER.reviewer_name
 FROM
-    RATING
+    RATING, MOVIE
         INNER JOIN
     REVIEWER
 WHERE
     MOVIE.movie_id = RATING.movie_id
-        AND RATING.reviewer_id = REVIEWER.reviewer_id
-        AND director IS NOT NULL;
+        AND RATING.reviewer_id = REVIEWER.reviewer_id;
+
+
+-- 19
+SELECT 
+    reviewer_id, reviewer_name
+FROM
+    REVIEWER
+WHERE
+    reviewer_name LIKE "%Martinez%";
+
+-- 20
+SELECT 
+    RATING.reviewer_id, reviewer_name, movie_id, stars, rating_date
+FROM
+    RATING, REVIEWER
+WHERE
+	REVIEWER.reviewer_id = RATING.reviewer_id
+    AND substring(rating_date, 9, 2) < '10';
+
+-- 21
+SELECT 
+    RATING.reviewer_id, reviewer_name, movie_id, stars, rating_date
+FROM
+    RATING, REVIEWER
+WHERE
+	REVIEWER.reviewer_id = RATING.reviewer_id
+    AND dayofmonth(rating_date) < '10';
+
+-- 22 not complete
+SELECT 
+    RATING.reviewer_id, reviewer_name, movie_id, stars, rating_date
+FROM
+    RATING, REVIEWER
+WHERE
+	REVIEWER.reviewer_id = RATING.reviewer_id
+    AND substring(rating_date, 9, 2) < '10';
