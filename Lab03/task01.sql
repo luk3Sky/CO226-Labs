@@ -60,3 +60,119 @@ INSERT INTO RATING(reviewer_id, movie_id, stars, rating_date) VALUES(206, 107, 3
 INSERT INTO RATING(reviewer_id, movie_id, stars, rating_date) VALUES(206, 106, 5, "2011-01-19");
 INSERT INTO RATING(reviewer_id, movie_id, stars, rating_date) VALUES(207, 107, 5, "2011-01-20");
 INSERT INTO RATING(reviewer_id, movie_id, stars, rating_date) VALUES(208, 104, 3, "2011-01-02");
+
+-- 1
+SELECT * FROM movie;
+
+-- 2
+SELECT *
+  FROM MOVIE
+ WHERE director = "James Cameron";
+
+-- 3
+SELECT *
+  FROM MOVIE
+ WHERE director = "James Cameron" AND year >= 2000;
+
+-- 4
+SELECT stars
+  FROM RATING;
+
+-- 5
+SELECT DISTINCT stars
+  FROM RATING;
+
+-- 6
+SELECT movie_id, director
+  FROM MOVIE;
+
+-- 7
+SELECT movie_id, title, year
+  FROM MOVIE
+ WHERE director = "Steven Spielberg";
+
+-- 8
+SELECT *
+  FROM MOVIE
+  CROSS JOIN RATING;
+
+-- 9
+SELECT MOVIE.movie_id, MOVIE.title
+  FROM MOVIE
+  CROSS JOIN (select movie_id, reviewer_id, stars from RATING) new_table;
+  
+-- 10
+SELECT MOVIE.movie_id, title, reviewer_id, stars
+  FROM MOVIE
+  INNER JOIN RATING
+  WHERE MOVIE.movie_id = RATING.movie_id;
+
+  -- 11
+SELECT MOVIE.movie_id, title, reviewer_id, stars
+  FROM MOVIE
+  INNER JOIN RATING
+  WHERE MOVIE.movie_id = RATING.movie_id AND stars <= 3
+  ORDER BY movie_id;
+
+  -- 12
+SELECT MOVIE.movie_id, title, reviewer_id, stars
+  FROM MOVIE
+  INNER JOIN RATING
+  WHERE MOVIE.movie_id = RATING.movie_id AND stars <= 4 AND stars >= 2
+  ORDER BY movie_id;
+  
+  -- 13
+SELECT reviewer_id, MOVIE.movie_id
+  FROM MOVIE
+  INNER JOIN RATING
+  WHERE MOVIE.movie_id = RATING.movie_id
+  ORDER BY reviewer_id;
+
+-- 14
+SELECT MOVIE.movie_id, MOVIE.movie_id
+  FROM MOVIE
+  INNER JOIN RATING
+  WHERE MOVIE.movie_id = RATING.movie_id
+  ORDER BY reviewer_id;
+  
+-- 15
+SELECT MOVIE.movie_id, MOVIE.title, RATING.reviewer_id, reviewer_name, stars
+  FROM MOVIE, RATING
+  INNER JOIN REVIEWER
+  WHERE MOVIE.movie_id = RATING.movie_id AND RATING.reviewer_id = REVIEWER.reviewer_id
+  ORDER BY movie_id;
+  
+-- 16
+SELECT MOVIE.movie_id, MOVIE.title, RATING.reviewer_id, reviewer_name, stars
+  FROM MOVIE, RATING
+  INNER JOIN REVIEWER
+  WHERE MOVIE.movie_id = RATING.movie_id AND RATING.reviewer_id = REVIEWER.reviewer_id AND stars = 5
+  ORDER BY movie_id;
+  
+-- 17
+SELECT 
+    MOVIE.title, reviewer_name, stars
+FROM
+    MOVIE,
+    RATING
+        INNER JOIN
+    REVIEWER
+WHERE
+    MOVIE.movie_id = RATING.movie_id
+        AND RATING.reviewer_id = REVIEWER.reviewer_id
+        AND rating_date IS NULL
+ORDER BY MOVIE.movie_id;
+
+-- 18
+SELECT 
+    director, reviewer_name
+FROM
+    MOVIE,
+    RATING
+        INNER JOIN
+    REVIEWER
+WHERE
+    MOVIE.movie_id = RATING.movie_id
+        AND RATING.reviewer_id = REVIEWER.reviewer_id
+        AND director IS NOT NULL
+ORDER BY MOVIE.movie_id;
