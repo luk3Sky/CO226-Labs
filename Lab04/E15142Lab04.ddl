@@ -13,11 +13,11 @@ ALTER TABLE MOVIE AUTO_INCREMENT = 101;
 INSERT INTO MOVIE(Title, Year, Director) VALUES("Gone with the Wind", 1939, "Victor Fleming");
 INSERT INTO MOVIE(Title, Year, Director) VALUES("Star Wars", 1977, "George Lucas");
 INSERT INTO MOVIE(Title, Year, Director) VALUES("The Sound of Music", 1965, "Robert Wise");
-INSERT INTO MOVIE(Title, Year, Director) VALUES("E.T.", 1982, "Steven Speilberg");
+INSERT INTO MOVIE(Title, Year, Director) VALUES("E.T.", 1982, "Steven Spielberg");
 INSERT INTO MOVIE(Title, Year, Director) VALUES("Titanic", 1997, "James Cameron");
 INSERT INTO MOVIE(Title, Year) VALUES("Snow White", 1937);
 INSERT INTO MOVIE(Title, Year, Director) VALUES("Avatar", 2009, "James Cameron");
-INSERT INTO MOVIE(Title, Year, Director) VALUES("Raiders of the Lost Ark", 1981, "Steven Speilberg");
+INSERT INTO MOVIE(Title, Year, Director) VALUES("Raiders of the Lost Ark", 1981, "Steven Spielberg");
 
 CREATE TABLE REVIEWER(
     Reviewer_ID INTEGER NOT NULL AUTO_INCREMENT,
