@@ -1,0 +1,46 @@
+USE E15142Lab04;
+
+-- 1(a)
+SELECT
+	*
+FROM
+    MOVIE AS M
+WHERE
+	M.Director = (SELECT DISTINCT Reviewer_Name FROM REVIEWER INNER JOIN MOVIE WHERE MOVIE.Director = REVIEWER.Reviewer_Name);
+
+-- 1(b)
+SELECT
+	*
+FROM
+    MOVIE AS M
+WHERE
+	M.Director <> (SELECT DISTINCT Reviewer_Name FROM REVIEWER INNER JOIN MOVIE WHERE MOVIE.Director = REVIEWER.Reviewer_Name);
+
+
+-- 2(a)
+SELECT
+	*
+FROM
+    RATING
+WHERE
+	Reviewer_ID = (SELECT Reviewer_ID FROM REVIEWER WHERE REVIEWER.Reviewer_Name LIKE "%Sarah Martinez%");
+
+-- 2(b)
+SELECT
+	*
+FROM
+    RATING
+WHERE
+	Reviewer_ID <> (SELECT Reviewer_ID FROM REVIEWER WHERE REVIEWER.Reviewer_Name LIKE "%Sarah Martinez%");
+
+-- 3(a)
+SELECT
+	Movie_ID
+FROM
+    RATING
+WHERE
+	stars < (SELECT stars FROM RATING WHERE RATING.Movie_ID = 103);
+
+SELECT stars FROM RATING WHERE RATING.Movie_ID = 103;
+
+SELECT stars FROM RATING WHERE RATING.Movie_ID <> 103;
