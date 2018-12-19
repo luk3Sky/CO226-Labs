@@ -41,6 +41,45 @@ FROM
 WHERE
 	stars < (SELECT stars FROM RATING WHERE RATING.Movie_ID = 103);
 
-SELECT stars FROM RATING WHERE RATING.Movie_ID = 103;
 
-SELECT stars FROM RATING WHERE RATING.Movie_ID <> 103;
+
+
+-- 10
+SELECT
+	MOVIE.Movie_ID, MOVIE.Title, RATING.Reviewer_ID, RATING.stars as Stars
+FROM
+    MOVIE INNER JOIN RATING
+WHERE
+	MOVIE.Movie_ID = RATING.Movie_ID;
+
+-- 11
+SELECT 
+    MOVIE.title as Movie_Title, AVG(RATING.stars) as AVG_Stars
+FROM
+    RATING,
+    MOVIE
+WHERE
+    RATING.Movie_ID = MOVIE.Movie_ID
+GROUP BY MOVIE.Movie_ID
+ORDER BY AVG(RATING.stars) DESC , MOVIE.Title ASC;
+
+-- 12
+DELETE  RATING
+FROM
+    RATING
+	INNER JOIN
+        MOVIE ON MOVIE.Movie_ID = RATING.Movie_ID
+WHERE
+    MOVIE.year < 1970 OR MOVIE.year > 2000;
+    
+-- 13
+DELETE RATING
+FROM
+    RATING
+WHERE
+    Rating_Date IS NULL;
+
+-- 14
+INSERT INTO RATING(Reviewer_ID, Movie_ID, stars)
+SELECT Reviewer_ID, Movie_ID, '5' FROM MOVIE CROSS JOIN REVIEWER WHERE Reviewer_Name = 'James Cameron';
+
