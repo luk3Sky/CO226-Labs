@@ -22,6 +22,8 @@ INSERT INTO Student(LName, Reg_No, GPA) VALUES("Nalin", 456, 3.05);
 INSERT INTO Student(LName, Reg_No, GPA) VALUES("Rohani", 324, 3.70);
 INSERT INTO Student(LName, Reg_No, GPA) VALUES("Chithra", 231, 3.30);
 
+select * from Student;
+
 -- 2
 CREATE TABLE Convocation (
     Con_Reg_No INTEGER NOT NULL PRIMARY KEY,
@@ -31,6 +33,8 @@ CREATE TABLE Convocation (
     Age INTEGER,
     FOREIGN KEY(Reg_No) REFERENCES Student(Reg_No)
 );
+
+DESCRIBE Convocation;
 
 -- 3
 DELIMITER //
